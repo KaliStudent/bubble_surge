@@ -15,7 +15,7 @@ npm run build
 npm start
 ```
 
-Development stays at http://127.0.0.1:5188 (`npm run dev`). The Node release server serves `dist` and its API together at http://127.0.0.1:5189. Cloudflare local preview runs on port 5190 (`npm run cf:dev`). A static-only host can serve the free game, but cannot fulfill purchases.
+Development stays at http://127.0.0.1:5188 (`npm run dev`). The Node release server serves `dist` and its API together at http://127.0.0.1:5189. Cloudflare local (`npm run cf:dev`). A static-only host can serve the free game, but cannot fulfill purchases.
 
 Use one persistent Node instance behind an HTTPS reverse proxy. Keep `data/surge.sqlite` on durable storage. Do not deploy this SQLite implementation to an ephemeral/serverless filesystem or multiple independent instances. Use a process supervisor, TLS, HTTP request limits, and regular SQLite-consistent backups. Test restoring a backup before enabling payments. `/healthz` reports service availability and whether payments are enabled. No automatic publishing or webhook registration occurs on startup.
 
