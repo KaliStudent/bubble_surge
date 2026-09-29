@@ -1,0 +1,28 @@
+{
+  "name": "bubble-shooter",
+  "private": true,
+  "version": "1.0.0-rc.1",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 5188 --strictPort",
+    "build": "tsc && vite build",
+    "test": "node --test tests/*.test.cjs",
+    "start": "node --env-file-if-exists=.env server/index.mjs",
+    "store:manage": "node --env-file-if-exists=.env server/manage.mjs",
+    "preview": "vite preview",
+    "cf:dev": "npm run build && wrangler d1 migrations apply bubble-surge-db --local && wrangler dev --ip 127.0.0.1 --port 5190 --inspector-port 9231",
+    "cf:check": "npm run build && wrangler deploy --dry-run",
+    "cf:migrate": "wrangler d1 migrations apply bubble-surge-db --remote",
+    "deploy": "npm run build && wrangler deploy"
+  },
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "overrides": { "undici": "7.29.1" },
+  "devDependencies": {
+    "miniflare": "5.20260926.0-alpha",
+    "typescript": "~6.0.2",
+    "vite": "^8.1.1",
+    "wrangler": "4.143.0"
+  }
+}

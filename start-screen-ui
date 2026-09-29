@@ -1,0 +1,288 @@
+@font-face {
+  font-family: "MyCustomFont";
+  src: url("s://buf.wtf/wp-content/besides.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.card {
+  position: absolute;
+  width: 350px;
+  height: 500px;
+  background: #020617;
+  border: solid black 10px;
+  border-top-left-radius:;
+  border-top-right-radius:;
+  border-bottom-left-radius: 22px;
+  border-bottom-right-radius: 22px;
+  background: linear-gradient(130deg, #020617, #1e3a8a, #60a5fa);
+}
+
+.settings-btn {
+  float: right;
+  position: relative;
+  height: 50px;
+  width: 50px;
+  left: 40px;
+  background: transparent;
+  border: none;
+  outline: none;
+  z-index: 10;
+}
+
+.game-btn {
+  left: 40px;
+  bottom: 60px;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 260px;
+  height: 80px;
+  border: none;
+  cursor: pointer;
+  clip-path: polygon(
+    35px 0%,
+    calc(100% - 35px) 0%,
+    100% 50%,
+    calc(100% - 35px) 100%,
+    35px 100%,
+    0% 50%
+  );
+  background: linear-gradient(180deg, #ffff00 0%, #ffd000 65%, #cca000 100%);
+  filter: drop-shadow(0 6px 0 #8a6c00);
+  transition:
+    transform 0.1s ease,
+    filter 0.1s ease;
+  z-index: 3;
+}
+
+.game-btn::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 50%;
+  background: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+.game-btn:active {
+  transform: translateY(3px);
+  filter: drop-shadow(0 3px 0 #8a6c00);
+}
+
+.btn-text-p {
+  position: relative;
+  z-index: 1;
+  font-family: Helvetica;
+  font-size: 4rem;
+  font-weight: 70;
+  font-stretch: wider;
+  letter-spacing: 1px;
+  color: #ffffff;
+
+  text-shadow:
+    3px 4px 0px #000000,
+    -1px -1px 0px #000000;
+  rotate: 2deg;
+}
+.btn-text-l {
+  position: relative;
+  z-index: 1;
+  font-family: Helvetica;
+  font-size: 4rem;
+  font-weight: 70;
+  font-stretch: wider;
+  letter-spacing: 1px;
+  color: #ffffff;
+
+  text-shadow:
+    3px 4px 0px #000000,
+    -1px -1px 0px #000000;
+  rotate: -1deg;
+}
+.btn-text-a {
+  position: relative;
+  z-index: 1;
+  font-family: Helvetica;
+  font-size: 4rem;
+  font-weight: 70;
+  font-stretch: wider;
+  letter-spacing: 1px;
+  color: #ffffff;
+
+  text-shadow:
+    3px 4px 0px #000000,
+    -1px -1px 0px #000000;
+  rotate: 1deg;
+}
+.btn-text-y {
+  position: relative;
+  z-index: 1;
+  font-family: Helvetica;
+  font-size: 4rem;
+  font-weight: 70;
+  font-stretch: wider;
+  letter-spacing: 1px;
+  color: #ffffff;
+
+  text-shadow:
+    3px 4px 0px #000000,
+    -1px -1px 0px #000000;
+  rotate: -2deg;
+}
+
+.svg {
+  position: relative;
+  top: 20px;
+  left: 0px;
+  position: relative;
+  width: 200px;
+  height: 220px;
+  z-index: 0;
+}
+
+
+
+
+
+div class="card">
+  <div>
+    <span class="settigns-btn"
+      ><svg
+        width="44px"
+        height="44px"
+        viewBox="0 -3.5 21 21"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        fill="#ffc800"
+        stroke="#ffc800"
+      >
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g
+          id="SVGRepo_tracerCarrier"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke="#CCCCCC"
+          stroke-width="0.378"
+        ></g>
+        <g id="SVGRepo_iconCarrier">
+          <title>settings [#f0e7b7]</title>
+          <desc>Created with Sketch.</desc>
+          <defs></defs>
+          <g
+            id="Page-1"
+            stroke-width="0.6930000000000001"
+            fill="none"
+            fill-rule="evenodd"
+          >
+            <g
+              id="Dribbble-Light-Preview"
+              transform="translate(-99.000000, -760.000000)"
+              fill="#f0e7b7"
+            >
+              <g id="icons" transform="translate(56.000000, 160.000000)">
+                <path
+                  d="M53.5,603 C53.5,602.647 53.5756,602 53.6932,602 L43,602 L43,604 L53.6932,604 C53.5756,604 53.5,603.353 53.5,603 L53.5,603 Z M61.7068,602 C61.27315,601 60.1192,600 58.75,600 C57.01015,600 55.6,601.343 55.6,603 C55.6,604.657 57.01015,606 58.75,606 C60.1192,606 61.27315,605 61.7068,604 L64,604 L64,602 L61.7068,602 Z M53.5,611 C53.5,611.353 53.4244,611.686 53.3068,612 L64,612 L64,610 L53.3068,610 C53.4244,610 53.5,610.647 53.5,611 L53.5,611 Z M51.4,611 C51.4,612.657 49.98985,614 48.25,614 C46.8808,614 45.72685,613 45.2932,612 L43,612 L43,610 L45.2932,610 C45.72685,609 46.8808,608 48.25,608 C49.98985,608 51.4,609.343 51.4,611 L51.4,611 Z"
+                  id="settings-[#f0e7b7]"
+                ></path>
+              </g>
+            </g>
+          </g>
+        </g></svg
+    ></span>
+  </div>
+
+  <span class="svg"
+    ><svg
+      height="350px"
+      width="350px"
+      version="1.1"
+      id="Layer_1"
+      xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      viewBox="-51.2 -51.2 614.40 614.40"
+      xml:space="preserve"
+      fill=""
+    >
+      <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+      <g
+        id="SVGRepo_tracerCarrier"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+      ></g>
+      <g id="SVGRepo_iconCarrier">
+        <g>
+          <path
+            style="fill:#006b1e;"
+            d="M144.773,511.505h366.978V279.19c-89.208-23.433-166.357,12.564-170.798,14.999l-84.951-1.311 L147.941,507.614"
+          ></path>
+          <path
+            style="fill:#006b1e;"
+            d="M0.272,425.815V201.751c0,0,127.703-14.952,223.747,82.839l36.178,36.178L59.291,444.252 L0.789,425.815"
+          ></path>
+        </g>
+        <g>
+          <path
+            style="fill:#03b800;"
+            d="M9.477,201.116c16.736,25.193,65.72,111.548,51.951,241.668l76.801-47.205 C121.42,293.817,75.428,227.288,56.417,203.379C35.748,200.736,19.178,200.729,9.477,201.116z"
+          ></path>
+          <path
+            style="fill:#03b800;"
+            d="M194.296,361.119l65.65-40.35l-36.178-36.178c-32.48-33.07-68.575-53.235-102.133-65.457 C141.633,236.937,175.55,277.904,194.296,361.119z"
+          ></path>
+          <path
+            style="fill:#03b800;"
+            d="M357.248,287.333c-31.632,28.499-92.042,97.558-114.902,224.083h90.387 c2.346-134.948,64.471-216.286,83.511-238.1C391.116,276.462,370.538,282.538,357.248,287.333z"
+          ></path>
+          <path
+            style="fill:#03b800;"
+            d="M511.751,279.101c-18.223-4.787-35.942-7.092-52.642-7.711 c-8.541,28.446-30.894,115.571-27.941,240.026h80.583V279.101z"
+          ></path>
+        </g>
+        <path
+          style="fill:#0677db;"
+          d="M124.449,99.019c22.359,0,40.485-18.126,40.485-40.485s-18.126-40.485-40.485-40.485 c-11.393,0-21.679,4.713-29.037,12.288C87.92,12.515,70.299,0,49.755,0C22.412,0,0.246,22.166,0.246,49.51s22.166,49.51,49.51,49.51 H124.449z"
+        ></path>
+        <path
+          style="opacity:0.23;fill:#c1d2f0;enable-background:new ;"
+          d="M143.373,22.744c0.908,3.368,1.401,6.906,1.401,10.561 c0,22.359-18.126,40.485-40.485,40.485H29.595c-9.748,0-18.83-2.829-26.492-7.693C9.925,85.28,28.231,99.019,49.755,99.019h74.694 c22.359,0,40.485-18.126,40.485-40.485C164.934,43.012,156.195,29.538,143.373,22.744z"
+        ></path>
+        <circle
+          style="fill:#fcf527;"
+          cx="418.848"
+          cy="94.994"
+          r="92.906"
+        ></circle>
+        <path
+          style="fill:#ffe224;"
+          d="M467.488,15.831c8.712,14.149,13.743,30.807,13.743,48.643c0,51.31-41.596,92.906-92.906,92.906 c-17.836,0-34.494-5.029-48.643-13.743c16.351,26.557,45.688,44.263,79.163,44.263c51.31,0,92.906-41.596,92.906-92.906 C511.751,61.518,494.044,32.183,467.488,15.831z"
+        ></path>
+        <path
+          style="fill:#0677db;"
+          d="M340.952,294.189c0,0-100.189-28.977-161.383,8.539c-59.578,36.526-36.019,57.093-178.782,123.087 v85.691h155.384c0,0,69.882-72.805,83.991-137.052C258.161,292.495,340.952,294.189,340.952,294.189z"
+        ></path>
+        <path
+          style="opacity:0.23;fill:#c1d2f0;enable-background:new ;"
+          d="M290.42,285.535c-24.855,8.359-55.465,27.995-65.586,74.083 c-7.655,34.855-31.725,72.23-52.146,99.132c-18.117,23.865-46.316,37.921-76.279,37.921H0.789V512h155.384 c0,0,69.882-72.805,83.991-137.052c17.998-81.958,100.789-80.265,100.789-80.265S319.514,288.487,290.42,285.535z"
+        ></path>
+        <g>
+          <path
+            style="opacity:0.26;fill:#001f0c;enable-background:new ;"
+            d="M204.477,450.977 C204.171,451.302,204.477,450.977,204.477,450.977l-6.567,8.325c-19.348,24.525-48.957,38.715-80.195,38.432L0.52,496.669v14.836 V512h155.384c0,0,0.163-0.17,0.469-0.495h355.11v-0.089V279.19v-0.089c-18.223-4.787-35.942-7.092-52.642-7.711 c-0.008,0.028-0.018,0.06-0.026,0.088c-4.648-0.172-9.207-0.199-13.687-0.127l-12.595,44.845 c-16.455,58.595-64.53,102.912-124.268,114.554L204.477,450.977z"
+          ></path>
+          <path
+            style="opacity:0.17;fill:#001f0c;enable-background:new ;"
+            d="M0.789,299.075v125.638c0,0,59.33-23.85,81.754-42.079 C82.543,382.634,0.789,373.263,0.789,299.075z"
+          ></path>
+        </g>
+      </g></svg
+  ></span>
+  <button class="game-btn">
+    <span class="btn-text-p">P</span><span class="btn-text-l">L</span
+    ><span class="btn-text-a">A</span><span class="btn-text-y">Y</span>
+  </button>
+</div>
