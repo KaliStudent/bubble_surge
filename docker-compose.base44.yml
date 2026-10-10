@@ -1,0 +1,41 @@
+# Base44 sandbox runbook for Bubble Surge.
+#
+# Runs the app from the cloned source (repo bind-mounted at /app) with the Node
+# release server, which serves the checked-in client bundle from ./dist plus the
+# /api/* + /healthz service on one origin (host port 3000, the preview port).
+#
+# See AGENTS.md for caveats: this repository contains no `src/` client source, so
+# there is no Vite dev server and no hot reload — the client is the prebuilt
+# ./dist bundle. Server-side edits need a service restart.
+services:
+  web:
+    image: node:22
+    working_dir: /app
+    # Dev-oriented startup: sync dependencies from the lockfile after the bind
+    # mount is available, then exec the server (PID 1). No watch mode exists for
+    # this plain static server, so restart the service after server edits.
+    command: ["sh", "-ec", "CI=true npm ci --no-audit --no-fund && exec node server/index.mjs"]
+    restart: on-failure
+    ports:
+      - "3000:3000"
+    environment:
+      - HOST=0.0.0.0
+      - PORT=3000
+      # Platform sandbox flag, passed through verbatim (unset outside the sandbox).
+      - BASE44_PREVIEW_MODE
+    # Platform-managed secrets env file, LAST so dashboard values always win.
+    env_file:
+      - /run/base44/app.env
+    volumes:
+      - .:/app
+      - node_modules:/app/node_modules
+    healthcheck:
+      # Probes real application responsiveness (the server's own health route).
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/healthz').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 10s
+      timeout: 5s
+      retries: 12
+      start_period: 120s
+
+volumes:
+  node_modules:

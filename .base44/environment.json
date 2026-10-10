@@ -1,0 +1,22 @@
+{
+  "previewPort": 3000,
+  "healthPath": "/healthz",
+  "startCommand": "docker compose -f docker-compose.base44.yml up -d",
+  "secrets": [
+    {
+      "name": "TELEGRAM_BOT_TOKEN",
+      "description": "Optional. Telegram bot token from @BotFather, needed only to enable server-verified Telegram Stars purchases (payments are disabled by default; the game runs fully without it).",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "TELEGRAM_WEBHOOK_SECRET",
+      "description": "Optional. Secret of at least 32 characters set when registering the Telegram webhook (Telegram login?setWebhook). Required only when Telegram Stars purchases are enabled.",
+      "requiredAtBoot": false
+    },
+    {
+      "name": "SURGE_SUPPORT_CONTACT",
+      "description": "Optional. Support handle shown in payment help messages, e.g. @your_support. Required only when Telegram Stars purchases are enabled.",
+      "requiredAtBoot": false
+    }
+  ]
+}
